@@ -1,6 +1,9 @@
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.IOException;
 
 public class GUI {
 
@@ -91,7 +94,21 @@ public class GUI {
         frame.setVisible(true);
         frame.setLayout(null);
         frame.setSize(500,500);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                try {
+                    NetConection.conectionSocet.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+
+                    frame.dispose();
+                    System.exit(0);
+
+            }
+        });
         frame.setResizable(false);
         frame.add(outputtextpanel);
         frame.add(inputpanel);

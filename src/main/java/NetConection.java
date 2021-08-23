@@ -7,7 +7,7 @@ public class NetConection  {
 
     static {
         try {
-            conectionSocet = new Socket("192.168.0.103",1234);
+            conectionSocet = new Socket("localhost",1234);
         } catch (IOException e) {
             e.printStackTrace();
         }
