@@ -12,20 +12,12 @@ public class GUI {
     JTextArea outputTextField = new JTextArea();
     static JButton sendButton = new JButton();
 
-    private static GUI mainwindow = new GUI();
+    private static final GUI mainwindow = new GUI();
 
 
     public static GUI getWindow(){
-//        if(mainwindow == null){
-//            mainwindow = new GUI();
-//            return mainwindow;
-//        }
-//        else {
-            return mainwindow;
-//        }
-    }
-    private void createPanel(){
 
+            return mainwindow;
 
     }
 
@@ -50,7 +42,6 @@ public class GUI {
         name = JOptionPane.showInputDialog("Input your nickname");
 
         // Buttons
-
         sendButton.setText("SEND");
         sendButton.setSize(100,100);
         sendButton.setBounds(400,400,100,100);
@@ -103,9 +94,11 @@ public class GUI {
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
-
+                finally {
                     frame.dispose();
                     System.exit(0);
+                }
+
 
             }
         });
@@ -114,7 +107,6 @@ public class GUI {
         frame.add(inputpanel);
         frame.add(buttonpanel);
 
-//        setSendButtonListener();
     }
 
 }

@@ -13,11 +13,4 @@ public class NetConection  {
         }
     }
 
-//    public NetConection() throws IOException {
-//        if(conectionSocet.isConnected()){
-//            System.out.println("conect");
-//        }
-//    }
-
-
 }

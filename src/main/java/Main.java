@@ -3,7 +3,7 @@ import java.io.OutputStream;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         //GUI Thread
         GUIThread guiThreadIMP = new GUIThread();
         Thread guiThread = new Thread(guiThreadIMP);
@@ -16,7 +16,6 @@ public class Main {
         OutputThread outputThreadIMP = new OutputThread();
         Thread ouputThread = new Thread(outputThreadIMP);
         ouputThread.start();
-//        NetConection conect = new NetConection();
 
     }
 

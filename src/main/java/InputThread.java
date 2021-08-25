@@ -32,8 +32,4 @@ public class InputThread implements Runnable{
 
     }
 
-//    public String getData(String data){
-//
-//
-//    }
 }

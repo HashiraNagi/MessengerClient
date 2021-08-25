@@ -17,7 +17,6 @@ public class OutputThread implements Runnable{
         DataOutputStream out = new DataOutputStream(Sockout);
 
         //Output data
-
         try {
             synchronized (TempDataHolder.lock) {
                 while (true) {
